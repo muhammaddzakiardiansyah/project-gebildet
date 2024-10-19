@@ -22,21 +22,29 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home', [
-//         "title" => "Home",
-//         "active" => "home"
+
+Route::get('/', [HomeController::class, 'index'])->name('page.home');
+Route::get('/about', [HomeController::class, 'about'])->name('page.about');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Route::get('/about', function () {
+//     return view('about', [
+//         "title" => "About",
+//         "active" => "about"
 //     ]);
 // });
-
-Route::get('/', [HomeController::class, 'index'])->name('page home');
-
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "About",
-        "active" => "about"
-    ]);
-});
 
 Route::get('/musica', [MusicaController::class, 'pilih']);
 
@@ -62,7 +70,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', function() {
     return view('dashboard.index', [
         'title' => 'Dashboard',
-        'active' => 'dashboard' 
+        'active' => 'dashboard'
     ]);
 })->middleware('auth');
 
@@ -88,7 +96,7 @@ Route::resource('/dashboard/categories', AdminCategoryController::class)->except
 // Route::get('/authors/{author:username}', function(User $author) {
 //     return view('posts', [
 //         "title" => "User Posts by " . $author->name,
-//         "active" => "User Post by " . $author->name, 
+//         "active" => "User Post by " . $author->name,
 //         "posts" => $author->Posts->load('user', 'category')
 //     ]);
 // });

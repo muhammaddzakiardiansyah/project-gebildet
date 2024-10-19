@@ -15,19 +15,19 @@ class HomeController extends Controller
 
         if(request('category')) {
             $category = Category::firstWhere('slug', request('category'));
-            $title = "di " . $category->nama;
+            $title = " in " . $category->name;
         }
 
         if(request('user')) {
             $user = User::firstWhere('username', request('user'));
-            $title = "oleh " . $user->name;
+            $title = " by " . $user->name;
         }
 
-        return view('home', [
-            "title" => "Postingan Utama " . $title,
+        return view('pages.home', [
+            "title" => $title,
             "active" => "home",
             // "posts" => post::all()
-            "posts" => post::latest()->filter(request(['search', 'category', 'user']))->paginate(7)->withQueryString()
+            "posts" => post::latest()->filter(request(['search', 'category', 'user']))->paginate(10)->withQueryString()
         ]);
     }
 

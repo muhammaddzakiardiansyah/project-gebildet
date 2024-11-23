@@ -13,12 +13,12 @@ class HomeController extends Controller
     {
         $title = " ";
 
-        if(request('category')) {
+        if (request('category')) {
             $category = Category::firstWhere('slug', request('category'));
             $title = " in " . $category->name;
         }
 
-        if(request('user')) {
+        if (request('user')) {
             $user = User::firstWhere('username', request('user'));
             $title = " by " . $user->name;
         }
@@ -33,9 +33,28 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('about', [
-            "title" => "About Me",
+        return view('pages.about', [
+            "title" => "About",
             "active" => "about"
+        ]);
+    }
+
+    public function article()
+    {
+        return view(
+            'pages.article',
+            [
+                'title' => 'Articles',
+                'active' => 'articles',
+            ]
+        );
+    }
+
+    public function contact()
+    {
+        return view('pages.contact', [
+            'title' => 'Contact',
+            'active' => 'contact',
         ]);
     }
 }

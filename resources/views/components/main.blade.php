@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- tailwind css --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- link favicon --}}
+    <link rel="shortcut icon" href="{{ asset('img/gebildet.png') }}" type="image/x-icon">
     {{-- alpine js --}}
     <script src="{{ asset('js/alpine.min.js') }}"></script>
     {{-- icon bootstrap --}}

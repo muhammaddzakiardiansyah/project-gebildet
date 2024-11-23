@@ -1,0 +1,1 @@
+<input type="text" name="search" id="search" class="block w-full px-4 py-3 mb-4 border border-green-600 rounded-lg focus:ring focus:ring-green-500 focus:outline-none" data-rounded="rounded-lg" data-primary="blue-500" placeholder="Ketik disini" autocomplete="off" autofocus>
